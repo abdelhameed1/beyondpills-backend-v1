@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "profiles",
+  "info": {
+    "singularName": "profile",
+    "pluralName": "profiles",
+    "displayName": "profile"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "admin::user"
+    },
+    "contactInfo": {
+      "type": "text"
+    },
+    "professionalInfo": {
+      "type": "text"
+    },
+    "companyInfo": {
+      "type": "text"
+    },
+    "medical_histories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::medical-history.medical-history",
+      "mappedBy": "profile_id"
+    }
+  }
+}

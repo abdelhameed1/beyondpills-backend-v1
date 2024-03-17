@@ -1,0 +1,76 @@
+{
+  "kind": "collectionType",
+  "collectionName": "programs",
+  "info": {
+    "singularName": "program",
+    "pluralName": "programs",
+    "displayName": "program",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "program_types": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::program-type.program-type",
+      "mappedBy": "program"
+    },
+    "enrollments": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::enrollment.enrollment",
+      "mappedBy": "programID"
+    },
+    "Eligibility_criteria": {
+      "type": "text"
+    },
+    "Countries": {
+      "type": "text"
+    },
+    "Disease": {
+      "type": "text"
+    },
+    "Drug": {
+      "type": "text"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "Benefits": {
+      "type": "text"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "programs"
+    },
+    "Referal": {
+      "type": "string"
+    },
+    "enrollment_codes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::enrollment-code.enrollment-code",
+      "mappedBy": "program"
+    },
+    "drugLogo": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

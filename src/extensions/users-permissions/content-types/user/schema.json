@@ -1,0 +1,179 @@
+{
+  "kind": "collectionType",
+  "collectionName": "up_users",
+  "info": {
+    "name": "user",
+    "description": "",
+    "singularName": "user",
+    "pluralName": "users",
+    "displayName": "User"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "username": {
+      "type": "string",
+      "minLength": 3,
+      "unique": false,
+      "configurable": false,
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "minLength": 6,
+      "configurable": false,
+      "required": true
+    },
+    "provider": {
+      "type": "string",
+      "configurable": false
+    },
+    "password": {
+      "type": "password",
+      "minLength": 6,
+      "configurable": false,
+      "private": true,
+      "searchable": false
+    },
+    "resetPasswordToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true,
+      "searchable": false
+    },
+    "confirmationToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true,
+      "searchable": false
+    },
+    "confirmed": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "blocked": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "role": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.role",
+      "inversedBy": "users",
+      "configurable": false
+    },
+    "health_tracking": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::health-tracking.health-tracking",
+      "mappedBy": "userID"
+    },
+    "reminders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::reminder.reminder",
+      "mappedBy": "users_permissions_user"
+    },
+    "enrollments": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::enrollment.enrollment",
+      "mappedBy": "userID"
+    },
+    "appointments": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::appointment.appointment",
+      "mappedBy": "patientID"
+    },
+    "address": {
+      "type": "string"
+    },
+    "birthdate": {
+      "type": "date"
+    },
+    "gender": {
+      "type": "string"
+    },
+    "phoneNumber": {
+      "type": "biginteger"
+    },
+    "medicalHistory": {
+      "type": "text"
+    },
+    "currentMedications": {
+      "type": "text"
+    },
+    "allergies": {
+      "type": "text"
+    },
+    "insuranceProvider": {
+      "type": "string"
+    },
+    "regNumber": {
+      "type": "string"
+    },
+    "contactPersonName": {
+      "type": "string"
+    },
+    "contactPersonTitle": {
+      "type": "string"
+    },
+    "userType": {
+      "type": "string"
+    },
+    "managerName": {
+      "type": "string"
+    },
+    "area": {
+      "type": "string"
+    },
+    "licenseNumber": {
+      "type": "string"
+    },
+    "services": {
+      "type": "string"
+    },
+    "specialty": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "degree": {
+      "type": "string"
+    },
+    "areaOfInterest": {
+      "type": "string"
+    },
+    "programs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::program.program",
+      "mappedBy": "user"
+    },
+    "nationalId": {
+      "type": "biginteger"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "practiceYears": {
+      "type": "string"
+    },
+    "operatingHours": {
+      "type": "string"
+    }
+  }
+}

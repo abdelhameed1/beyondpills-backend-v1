@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "enrollment_codes",
+  "info": {
+    "singularName": "enrollment-code",
+    "pluralName": "enrollment-codes",
+    "displayName": "enrollment_code",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "program": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::program.program",
+      "inversedBy": "enrollment_codes"
+    },
+    "code": {
+      "type": "string"
+    },
+    "hcp": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "appointments",
+  "info": {
+    "singularName": "appointment",
+    "pluralName": "appointments",
+    "displayName": "appointment",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "patientID": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "appointments"
+    },
+    "Date": {
+      "type": "datetime"
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "Notes": {
+      "type": "text"
+    },
+    "providerID": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::healthcare-provider.healthcare-provider"
+    }
+  }
+}

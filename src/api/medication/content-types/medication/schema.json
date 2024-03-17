@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "medications",
+  "info": {
+    "singularName": "medication",
+    "pluralName": "medications",
+    "displayName": "medication"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Manufacturer": {
+      "type": "string"
+    }
+  }
+}

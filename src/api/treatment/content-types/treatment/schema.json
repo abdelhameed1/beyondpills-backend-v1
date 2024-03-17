@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "treatments",
+  "info": {
+    "singularName": "treatment",
+    "pluralName": "treatments",
+    "displayName": "treatment",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "string"
+    },
+    "possibleSideEffects": {
+      "type": "text"
+    },
+    "medicationID": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::medication.medication"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "referal_requests",
+  "info": {
+    "singularName": "referal-request",
+    "pluralName": "referal-requests",
+    "displayName": "referal_request",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "number_of_codes": {
+      "type": "integer"
+    },
+    "hcp": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "program": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::program.program"
+    },
+    "status": {
+      "type": "string"
+    }
+  }
+}

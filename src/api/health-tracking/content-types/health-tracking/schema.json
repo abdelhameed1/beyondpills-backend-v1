@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "health_trackings",
+  "info": {
+    "singularName": "health-tracking",
+    "pluralName": "health-trackings",
+    "displayName": "health_tracking"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "userID": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "health_tracking"
+    },
+    "Date": {
+      "type": "datetime"
+    },
+    "healthMetrics": {
+      "type": "text"
+    },
+    "Notes": {
+      "type": "text"
+    }
+  }
+}
